@@ -1,0 +1,70 @@
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+V1 PROMPT:
+i want you to make an app that can generate grids like these (see attached media)
+Heres the specifics of how the app operates, choose any language that you feel will best work for it.
+APP LAYOUT:
+The program opens with a screen, on the right you have two buttons generate grid, and change background images. in the middle, you have a preview screen where you see what the final png output will be. on the right theres a button to select an image of transparent text to insert in the empty first bar of the grid, there is also a list to add all the images that will be in the grids.
+
+APP BEHAVIOUR:
+When clicking the generate button, you get a new grid, the grid is a premade image of a blank grid with a transparent background that can be imported in a seperate settings window, the grid fills randomly with all of the images loaded in the list to the right of the preview. there should be a counter above the preview that can be ticked up or down to select how many grids to generate and when the user clicks generate, instead of showing a preview it asks where to save them and saves all the grids in that folderwhen generating a set of grids VERY IMPORTANT: NO IMAGES CAN REPEAT IN TWO GRIDS, for example, if i generate 5 grids and one of my pictures in a monkey, the monkey can appear in grid 1 slot 1, but NEVER in grid 2 slot 1.
+
+Make the app first, tell me what language and stuff you chose, then we will get to bug fixing.
+
+Attached are photo examples of the grid completed but without items in the cases, the grid itself, and text attachments.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+V2 CLIENT DESIRED CHANGES
+La grille doit paretre
+Starting text height = 160
+la base de la grille dois etre blanche
+jamais avoir 2 images pareilles dans une grille (Meme s'ils ne sont pas a la meme place que dans une autre grille généré)
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+PROMPT:
+okay, lets get to debugging!
+
+FIRST AND MAJOR CHANGES:
+The current grid does not show, as in there is no black outline to go along with all the images.. While your at it, add 3 options to the options menu 1 should be grid width, that determines the thickness of the border, the second button should be the color of the grid.
+The third button should fix another problem we had, the starting color of the board had a blue tint, the starting color should actually be white, this option should also be alterable in the settings.
+There should also be a slider in the settings that allows you to make the background image more or less transparent, it should allow you to mess with its transparency similar to an alpha slider in color settings, but only the alpha slider.
+MAJOR PROBLEM: The grid should include EVERY picture given. The grids will almost always be 4x4, so as an example, a 4x4 grid gives 16 pictures, i will attach an image below of what NOT to do, your program put the same image twice in the same board. even if they dont appear in the same slot in another generated board of the batch, this is unacceptable.
+lastly, make the default value for the text height 160
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+V3 CLIENT DESIRED CHANGES
+Actually remove duplicate slots in all grids
+Improve randomisation to avoid similar patterns
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+PROMPT:
+Okay, when you generate all the grids, i really need them to be all unique slots! Actually remove duplicate slots pictures in same slots across all grids, remember, Board 1 Slot 1 picture CANNOT EQUAL Board 7 Slot 1 picture. in all grids! im going to send you two images and hopefully you will see your mistake! Also improve the randomisation if possible to avoid similar patterns of one picture being above or besides another in 3 or 4 grids, it makes it predictable.
+
+See how in both pictures, the rose is the first one, avoid that at all cost when i up the slider to multiple and click generate, all generations must be ENTIRELY UNIQUE!
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+V4 CLIENT DESIRED CHANGES
+Actually remove duplicate slots in all grids
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+PROMPT:
+theres still some overlap, like the frogs, or the flowers
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+V5 idem
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+PROMPT:
+no that broke it again... now the grids are back to having multiple of the same image in the same grid
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+V6 and 7 IDEM
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+PROMPT:
+Before i try that what if instead of generating it so on and so forth, we generate an assigned number matrix first for however many Boards we want, and then after asking the user where to save them we put a progress bar where the program verifies its number matrixes cross refrenced to each other and if there are any mistakes, it tries again
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
